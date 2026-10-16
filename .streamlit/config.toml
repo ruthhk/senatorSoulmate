@@ -1,0 +1,10 @@
+
+[theme]
+base = "light"
+primaryColor = "#5A2D82"
+codeTextColor = "#5A2D82"
+backgroundColor = "#F7F3EE"
+secondaryBackgroundColor = "#ECE5DC"
+textColor = "#1E1B24"
+font = "serif"
+borderColor = "#5A2D82"
