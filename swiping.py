@@ -89,7 +89,7 @@ if uniqueSenator:
             
             st.write(bios)
     if currIndex >= len(uniqueSenator) - 1: 
-        with st.container():
+        with st.container(horizontal=True):
             colL, colR = st.columns([1,1], vertical_alignment="center")
             with colL:
                 with st.container(border=False):
@@ -102,7 +102,7 @@ if uniqueSenator:
                         st.session_state.matchList.append(currSenator)
                         st.switch_page("endpage.py")
     else:
-        with st.container(): 
+        with st.container(horizontal=True): 
             colL, colR = st.columns([1,1], vertical_alignment="center")
             with colL:
                 with st.container(border=False):
