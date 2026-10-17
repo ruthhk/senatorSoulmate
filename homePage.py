@@ -1,4 +1,5 @@
 import streamlit as st
+from pathlib import Path
 
 logoPic = "pics/hill logo.png"
 st.logo(logoPic,  size="medium")
@@ -20,7 +21,7 @@ def write_right(text):
 
 
 bigLogo = "pics/hill logo big.png"
-capHill = "pics/capitolHill.jpg"
+capHill = "pics/capitolHill.png"
 ted = "pics/tedCruz.png"
 
 with st.container(horizontal_alignment="center"): 
@@ -30,16 +31,14 @@ st.divider()
 # st.title("Find your perfect match",
 #          text_alignment="center", anchor=False)
 
-with st.container(horizontal_alignment = "center"):
-
-    leftcol, rightcol = st.columns([1,1], border = False, vertical_alignment="bottom")
-    st.space("large")
-    leftcol1, rightcol1 = st.columns([1,1], border = False, vertical_alignment="bottom")
-    st.space("large")
-    leftcol2, rightcol2 = st.columns([1,1], border = False, vertical_alignment="bottom")
-    st.space("large")
-    leftcol3, rightcol3 = st.columns([1,1], border = False, vertical_alignment="bottom")
-    st.space("medium")
+leftcol, rightcol = st.columns([1,1], border = False, vertical_alignment="bottom")
+st.space("small")
+leftcol1, rightcol1 = st.columns([1,1], border = False, vertical_alignment="bottom")
+st.space("small")
+leftcol2, rightcol2 = st.columns([1,1], border = False, vertical_alignment="bottom")
+st.space("small")
+leftcol3, rightcol3 = st.columns([1,1], border = False, vertical_alignment="bottom")
+st.space("small")
 
 with st.container():
     with leftcol: 
