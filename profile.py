@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np 
+from pathlib import Path
 
 logoPic = "pics/hill logo.png"
 st.logo(logoPic,  size="medium")
@@ -52,7 +53,7 @@ st.logo(logoPic,  size="medium")
 # df.to_csv('cleanSenators.csv')
 
 
-df = pd.read_csv('/Users/ruthkahn/cgdProject/cleanSenators.csv')
+df = pd.read_csv(Path(__file__).parent / 'cleanSenators.csv')
 df = df.set_index("senator", drop=False).rename_axis(None)
 
 
