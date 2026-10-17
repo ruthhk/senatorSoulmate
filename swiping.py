@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
 
 logoPic = "pics/hill logo.png"
@@ -87,31 +88,26 @@ if uniqueSenator:
                 st.markdown(" ".join(badges))
             
             st.write(bios)
-
-
-
-
-
-
     if currIndex >= len(uniqueSenator) - 1: 
-        with col1:
+        colL, colR = st.columns([1,1], vertical_alignment="center")
+        with colL:
             with st.container(border=False, horizontal_alignment="right"):
                 if st.button("Dislike :x:"):
                     st.switch_page("endpage.py")
         
-        with col3:
+        with colR:
             with st.container(border=False, horizontal_alignment="left"):
                 if st.button("Like :white_check_mark:"): 
                     st.session_state.matchList.append(currSenator)
                     st.switch_page("endpage.py")
     else:
-
-        with col1:
+        colL, colR = st.columns([1,1], vertical_alignment="center")
+        with colL:
             with st.container(border=False, horizontal_alignment="right"):
                 if st.button("Dislike :x:"):
                     st.session_state.senator_index += 1
                     st.rerun()
-        with col3:
+        with colR:
             with st.container(border=False, horizontal_alignment="left"):
                 if st.button("Like :white_check_mark:"): 
                     st.session_state.senator_index += 1
