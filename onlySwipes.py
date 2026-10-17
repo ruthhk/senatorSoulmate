@@ -87,12 +87,12 @@ if uniqueSenator:
         with st.container(): 
             colL, colR = st.columns([1,1], vertical_alignment="center")
             with colL:
-                with st.container(border=False, horizontal_alignment="right"):
+                with st.container(border=False):
                     if st.button("Dislike :x:"):
                         st.switch_page("endpage.py")
             
             with colR:
-                with st.container(border=False, horizontal_alignment="left"):
+                with st.container(border=False):
                     if st.button("Like :white_check_mark:"): 
                         st.session_state.matchList.append(currSenator)
                         st.switch_page("endpage.py")
@@ -100,12 +100,12 @@ if uniqueSenator:
         with st.container():
             colL, colR = st.columns([1,1], vertical_alignment="center") 
             with colL:
-                with st.container(border=False, horizontal_alignment="right"):
+                with st.container(border=False):
                     if st.button("Dislike :x:"):
                         st.session_state.senator_index += 1
                         st.rerun()
             with colR:
-                with st.container(border=False, horizontal_alignment="left"):
+                with st.container(border=False):
                     if st.button("Like :white_check_mark:"): 
                         st.session_state.senator_index += 1
                         st.session_state.matchList.append(currSenator)
