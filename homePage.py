@@ -25,7 +25,7 @@ capHill = "pics/capitolHill.png"
 ted = "pics/tedCruz.png"
 
 with st.container(horizontal_alignment="center"): 
-    st.image(capHill, width="stretch", output_format="jpg")
+    st.image(capHill, width="stretch")
 
 st.divider()
 # st.title("Find your perfect match",
