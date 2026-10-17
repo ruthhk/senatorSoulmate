@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 
 
 logoPic = "pics/hill logo.png"
 st.logo(logoPic,  size="medium")
 
-swipeOptions = pd.read_csv('/Users/ruthkahn/cgdProject/senateDatingProfiles.csv')
+swipeOptions = pd.read_csv(Path(__file__).parent /'senateDatingProfiles.csv')
 swipeOptions["Date of birth"] = pd.to_datetime(swipeOptions["Date of birth"])
 today = pd.Timestamp.today()
 swipeOptions["age"] = (
