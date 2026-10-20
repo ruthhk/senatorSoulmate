@@ -63,7 +63,11 @@ if uniqueSenator:
         matchsum = swipeOptions.loc[
             swipeOptions["senator"] == currSenator,
             "sums"
-        ].iloc[0]          
+        ].iloc[0]     
+        st.progress(
+            currIndex / len(uniqueSenator),
+            text=f"Senator {currIndex + 1} of {len(uniqueSenator)}",
+        )     
         st.header(fullName, text_alignment="center", anchor = False)
         with st.container(border=False): 
             st.image(f"pics/{currSenator}.jpg", width = "stretch")

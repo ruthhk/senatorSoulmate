@@ -57,6 +57,11 @@ if uniqueSenator:
             "Bios"
         ].iloc[0]          
         st.header(fullName, text_alignment="center", anchor = False)
+        st.progress(
+            currIndex / len(uniqueSenator),
+            text=f"Senator {currIndex + 1} of {len(uniqueSenator)}",
+        )
+
         with st.container(border=False): 
             st.image(f"pics/{currSenator}.jpg", width = "stretch")
             leftSide, rightSide = st.columns([1,1], border=False)
@@ -69,9 +74,9 @@ if uniqueSenator:
 
 
             if age >= 70:
-                badges.append(":orange-badge[🧓 on the older side]")
+                badges.append(":orange-badge[on the older side]")
             if age < 51:
-                badges.append(":green-badge[👶 super young]")
+                badges.append(":green-badge[super young]")
             badges.append(":green-badge[is a senator]")
             if badges:
                 st.markdown(" ".join(badges))
