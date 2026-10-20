@@ -6,6 +6,7 @@ from pathlib import Path
 logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
+st.session_state.current_page = "end"   # any name that isn't "swipe"
 yourState = st.session_state.get("yourState")
 senatorMatches = st.session_state.get("senatorMatches", [])
 matchperc = st.session_state.get("matchperc")

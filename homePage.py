@@ -4,6 +4,8 @@ from pathlib import Path
 logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
+st.session_state.current_page = "end"   # any name that isn't "swipe"
+
 st.markdown("""
     <style>
         [data-testid="stSidebar"] {
@@ -30,6 +32,21 @@ with st.container(horizontal_alignment="center"):
 st.divider()
 # st.title("Find your perfect match",
 #          text_alignment="center", anchor=False)
+
+col1, col2 = st.columns([1,1], border = False)
+
+with col1: 
+    with st.container(horizontal_alignment="center"):
+        toProfile = st.button(label = "Create your profile", type="primary", key="create_profile_top")
+        if toProfile: 
+            st.switch_page("profile.py")
+
+with col2:
+    with st.container(horizontal_alignment="center"):
+        toSwipe = st.button(label = "Just swipe", type="primary", key="swipe_top")
+        if toSwipe: 
+            st.switch_page("onlySwipes.py")
+st.divider()
 
 leftcol, rightcol = st.columns([1,1], border = False, vertical_alignment="bottom")
 st.space("small")
@@ -87,12 +104,12 @@ st.space("medium")
 rcol, lecol = st.columns([1,1], border = False)
 with rcol: 
     with st.container(horizontal_alignment="center"):
-        toProfile = st.button(label = "Create your profile", type="primary")
-        if toProfile: 
+        profileButton = st.button(label = "Create your profile", type="primary", key="create_profile_bottom")
+        if profileButton: 
             st.switch_page("profile.py")
 
 with lecol:
     with st.container(horizontal_alignment="center"):
-        toSwipe = st.button(label = "Just swipe", type="primary")
-        if toSwipe: 
+        swipteButton = st.button(label = "Just swipe", type="primary", key="swipe_bottom")
+        if swipteButton: 
             st.switch_page("onlySwipes.py")

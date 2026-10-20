@@ -199,6 +199,6 @@ else:
     st.session_state["newdf"] = newdf
 
     st.switch_page("swiping.py")
-
+    st.session_state.current_page = "end"   # any name that isn't "swipe"
 
 

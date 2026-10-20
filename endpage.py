@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 
-
 logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
@@ -12,6 +11,7 @@ matchperc = st.session_state.get("matchperc")
 newdf = pd.DataFrame(st.session_state.get("newdf"))
 matchList = st.session_state.get("matchList")
 swipeOptions = st.session_state.get("swipeOptions")
+st.session_state.current_page = "end"   # any name that isn't "swipe"
 
 st.title("Your matches", text_alignment="center", anchor=False)
 

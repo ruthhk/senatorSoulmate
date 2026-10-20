@@ -27,8 +27,8 @@ matchNum = range(len(uniqueSenator))
 col1, col2, col3 = st.columns([0.7, 2, 0.7], border=False)
 
 
-if "senator_index" not in st.session_state:
-    st.session_state.senator_index = 0
+if "senator_index_all" not in st.session_state:
+    st.session_state.senator_index_all = 0
 
 if "swipeOptions" not in st.session_state:
     st.session_state.swipeOptions = swipeOptions
@@ -37,7 +37,7 @@ if "matchList" not in st.session_state:
     st.session_state.matchList = []
 
 if uniqueSenator:
-    currIndex = st.session_state.senator_index
+    currIndex = st.session_state.senator_index_all
     with col2: 
         currSenator = uniqueSenator[currIndex]
         fullName = swipeOptions.loc[
@@ -107,12 +107,12 @@ if uniqueSenator:
                 with colL:
                     with st.container(border=False):
                         if st.button("Dislike :x:", width="stretch"):
-                            st.session_state.senator_index += 1
+                            st.session_state.senator_index_all += 1
                             st.rerun()
                 with colR:
                     with st.container(border=False):
                         if st.button("Like :white_check_mark:", width="stretch"): 
-                            st.session_state.senator_index += 1
+                            st.session_state.senator_index_all += 1
                             st.session_state.matchList.append(currSenator)
                             st.rerun()
                 
