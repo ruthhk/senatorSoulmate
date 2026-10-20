@@ -1,7 +1,7 @@
 import streamlit as st
 from pathlib import Path
 
-logoPic = "pics/hill logo.png"
+logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
 st.markdown("""
@@ -20,7 +20,7 @@ def write_right(text):
     st.markdown(f"<div style='text-align: right'>{text}</div>", unsafe_allow_html=True)
 
 
-bigLogo = "pics/hill logo big.png"
+bigLogo = "pics/hillLogoBig.png"
 capHill = "pics/capitolHill.png"
 ted = "pics/tedCruz.png"
 

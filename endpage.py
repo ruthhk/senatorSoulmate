@@ -1,8 +1,9 @@
 import streamlit as st 
 import pandas as pd
+from pathlib import Path
 
 
-logoPic = "pics/hill logo.png"
+logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
 yourState = st.session_state.get("yourState")

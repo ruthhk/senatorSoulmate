@@ -3,7 +3,7 @@ import pandas as pd
 from pathlib import Path
 
 
-logoPic = "pics/hill logo.png"
+logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
 yourState = st.session_state.get("yourState")
@@ -88,34 +88,34 @@ if uniqueSenator:
                 st.markdown(" ".join(badges))
             
             st.write(bios)
-    if currIndex >= len(uniqueSenator) - 1: 
-        with st.container(horizontal=True, horizontal_alignment="center"):
-            colL, colR = st.columns([1,1], vertical_alignment="center")
-            with colL:
-                with st.container(border=False):
-                    if st.button("Dislike :x:"):
-                        st.switch_page("endpage.py")
-            
-            with colR:
-                with st.container(border=False):
-                    if st.button("Like :white_check_mark:"): 
-                        st.session_state.matchList.append(currSenator)
-                        st.switch_page("endpage.py")
-    else:
-        with st.container(horizontal=True, horizontal_alignment="center"): 
-            colL, colR = st.columns([1,1], vertical_alignment="center")
-            with colL:
-                with st.container(border=False):
-                    if st.button("Dislike :x:"):
-                        st.session_state.senator_index += 1
-                        st.rerun()
-            with colR:
-                with st.container(border=False):
-                    if st.button("Like :white_check_mark:"): 
-                        st.session_state.senator_index += 1
-                        st.session_state.matchList.append(currSenator)
-                        st.rerun()
+        if currIndex >= len(uniqueSenator) - 1: 
+            with st.container(horizontal=True):
+                colL, colR = st.columns([1,1], vertical_alignment="center")
+                with colL:
+                    with st.container(border=False):
+                        if st.button("Dislike :x:", width="stretch"):
+                            st.switch_page("endpage.py")
                 
+                with colR:
+                    with st.container(border=False):
+                        if st.button("Like :white_check_mark:", width="stretch"): 
+                            st.session_state.matchList.append(currSenator)
+                            st.switch_page("endpage.py")
+        else:
+            with st.container(horizontal=True): 
+                colL, colR = st.columns([1,1], vertical_alignment="center")
+                with colL:
+                    with st.container(border=False):
+                        if st.button("Dislike :x:", width="stretch"):
+                            st.session_state.senator_index += 1
+                            st.rerun()
+                with colR:
+                    with st.container(border=False):
+                        if st.button("Like :white_check_mark:", width="stretch"): 
+                            st.session_state.senator_index += 1
+                            st.session_state.matchList.append(currSenator)
+                            st.rerun()
+                    
 
 else:
     st.write("You have no matches :cry:.")

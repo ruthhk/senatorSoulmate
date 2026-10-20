@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 from pathlib import Path
 
-logoPic = "pics/hill logo.png"
+logoPic = "pics/hillLogo.png"
 st.logo(logoPic,  size="medium")
 
 ### Data Frames 
